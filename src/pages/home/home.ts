@@ -1,7 +1,7 @@
-import { Component, ElementRef } from '@angular/core';
-import { NavController, ToastController, AlertController, ModalController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, ToastController, AlertController } from 'ionic-angular';
 
-import { AlunoProvider, Aluno, AlunoList } from '../../providers/aluno/aluno';
+import { AlunoProvider, AlunoList } from '../../providers/aluno/aluno';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +14,7 @@ export class HomePage {
   totalAlunos: string
  
   constructor(public navCtrl: NavController, private alunoProvider: AlunoProvider, 
-    private toast: ToastController, private alert: AlertController, private modalCtrl: ModalController) { }
+    private toast: ToastController, private alert: AlertController) { }
  
   ionViewDidEnter() {
     this.alunoProvider.getAll()
