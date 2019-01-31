@@ -1,0 +1,27 @@
+<ion-header >
+  <ion-navbar color="secondary"> 
+    <ion-title>Contatos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-label>{{ totalAlunos }}</ion-label>
+  <ion-list >
+
+    <ion-item *ngFor="let item of alunos" class="card" (click)="itemClicked(item)" no-lines>
+      <img src="assets/imgs/user_circle.png" width="40" item-left>
+      <ion-label>{{ item.aluno.nome }}</ion-label>
+    </ion-item >
+
+  </ion-list>
+   
+  <ion-fab right bottom (click)="addAluno()">
+    <button ion-fab class="pop-in" color="secondary">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+    
+</ion-content>
+
+

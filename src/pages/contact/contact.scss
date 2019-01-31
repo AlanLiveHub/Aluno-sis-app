@@ -1,0 +1,61 @@
+page-contact {
+
+
+    .fundo{
+        background-color: darkslategray;
+    }
+    
+    #campos{
+        border-radius: 10px;
+        background-color: white;
+        padding: 10px;
+        
+    }
+
+    #title-0{
+        color: white !important;
+        background-color: color($colors, secondary, base) !important;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 10px;
+        width: auto; 
+    }
+
+    #title{
+        color: white !important;
+        background-color: color($colors, secondary, base) !important;
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 10px;
+        margin-top: 50px;
+        width: auto;   
+    }
+
+    .error{
+        font-size: 12px;
+        color: red;
+        margin-top: 2px;
+    }
+    .button{
+        margin-top: 50px;
+    }
+
+    .selector {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center;
+      }
+      
+    input{
+        text-transform: capitalize !important;
+        border: 0;
+    }
+    .labels{
+        color: blueviolet;
+        background-color: color($colors, secondary, base) !important;  
+        position: sticky;  
+        margin-top: -6px;
+    }
+}

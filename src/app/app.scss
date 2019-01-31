@@ -1,0 +1,55 @@
+
+.alertApresentacao {
+
+    color: white; 
+  
+    .titleNome {
+        font: 1em sans-serif;
+        font-size: 20px;  
+     }
+
+     .contato {
+        font: 1em sans-serif;
+        font-size: 14px;  
+     }
+     
+     .pg {
+       font: 1em sans-serif;
+       font-size: 14px;
+       margin-top: 2px; 
+    }
+
+    .alert-title{
+        text-align: center;
+        font-size: 25px;  
+    }
+
+    .alert-sub-title{
+        text-align: center;     
+    }
+
+    button {
+        color: white !important;
+        background-color: color($colors, secondary, base) !important; 
+    }
+
+    .alert-button-group {
+        flex-direction: row !important;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .alert-message {
+        text-align: center;
+        color: white;
+        overflow: hidden;  
+        text-transform: capitalize !important;
+    }
+
+    .alert-wrapper {
+        background-color: darkslategray;
+        border-radius: 20px;
+
+    }
+    
+  }

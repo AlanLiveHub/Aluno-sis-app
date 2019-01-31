@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Cadastrar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="fundo">
+
+    <form padding [formGroup]="cadastroForm" (submit)="save()" novalidate autocapitalize=on>
+
+      <ion-label fixed id="title-0">Dados do Aluno</ion-label>
+     
+      <div id="campos">
+        
+        <ion-item>
+          <ion-input placeholder="Nome" class="form-control" type="text" name="nome" formControlName="nome" [(ngModel)]="model.nome" ></ion-input>
+        </ion-item>
+        <ion-label *ngIf="errorNome" class="error" stacked> {{messageNome}}</ion-label>
+        
+        <ion-item>
+         <ion-datetime placeholder="Nascimento" name="data_nasc" formControlName="data_nasc" displayFormat="DD/MM/YYYY"  [(ngModel)]="model.data_nasc"></ion-datetime>
+        </ion-item>
+        <ion-label stacked *ngIf="errorData_nasc" class="error"> {{messageData_nasc}}</ion-label>
+  
+        <ion-item>
+           <ion-select placeholder="Série de Ingresso:" name="s_ingresso" formControlName="s_ingresso" [(ngModel)]="model.serie_ingresso" class="selector" >
+              <ion-option *ngFor="let item of ingressoItens" >{{item}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-label stacked *ngIf="errorS_ingresso" class="error"> {{messageS_ingresso}}</ion-label>
+     
+      </div>
+
+      <ion-label id="title" fixed>Endereço</ion-label>
+      <div id="campos">
+
+        <ion-item>
+          <ion-input placeholder="Cep" type="text" name="cep" formControlName="cep"  minlength="8" maxlength="8" [(ngModel)]="model.cep"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorCep" class="error"> {{messageCep}}</ion-label>
+    
+        <ion-item>
+          <ion-select placeholder="Estado:" [(ngModel)]="model.estado" name="estado" formControlName="estado" class="selector" >
+            <ion-option *ngFor="let item of arrayEstados" >{{item}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-label stacked *ngIf="errorEstado" class="error"> {{messageEstado}}</ion-label>
+
+        <ion-item>
+          <ion-input placeholder="Cidade" type="text" name="cidade" formControlName="cidade" [(ngModel)]="model.cidade"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorCidade" class="error"> {{messageCidade}}</ion-label>
+
+        <ion-item>
+          <ion-input placeholder="Bairro" type="text" name="bairro" formControlName="bairro"  maxlength="100"[(ngModel)]="model.bairro"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorBairro" class="error"> {{messageBairro}}</ion-label>
+
+        <ion-item>
+          <ion-input placeholder="Rua" type="text" name="rua" formControlName="rua"  maxlength="120"[(ngModel)]="model.rua"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorRua" class="error"> {{messageRua}}</ion-label>
+    
+        <ion-item>
+          <ion-input placeholder="Número" type="text" name="numero" formControlName="numero" [(ngModel)]="model.numero"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorNumero" class="error"> {{messageNumero}}</ion-label>
+      
+        <ion-item>
+          <ion-input placeholder="Complemento" type="text" name="comple" formControlName="comple"  maxlength="50"[(ngModel)]="model.complemento"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorComple" class="error"> {{messageComple}}</ion-label>
+    
+      </div>
+
+
+      <ion-label id="title" fixed>Dados da Mãe</ion-label>
+      <div id="campos">
+        
+        <ion-item>
+          <ion-input type="text" placeholder="nome" name="nome_mae" formControlName="nome_mae"  minlength="3" maxlength="100"[(ngModel)]="model.Nome_mae"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorNome_mae" class="error"> {{messageNome_mae}}</ion-label>
+
+        <ion-item>
+          <ion-input type="text" placeholder="CPF" name="cpf_mae" formControlName="cpf_mae" minlength="11" maxlength="11"[(ngModel)]="model.cpf_mae"></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorCpf_mae" class="error"> {{messageCpf_mae}}</ion-label>
+        
+        <ion-item>
+          <ion-select placeholder="Dia para pagamento:" [(ngModel)]="model.pagamentoData" name="pagamentoData" formControlName="pagamentoData" class="selector" >
+            <ion-option *ngFor="let item of pagamentoitens" >{{item}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-label stacked *ngIf="errorPagamentoData" class="error"> {{messagePagamentoData}}</ion-label>
+    
+        <ion-item>
+            <ion-label></ion-label>
+          <ion-input type="tel" placeholder="Tel. Contato" name="tel_contato" formControlName="tel_contato" minlength="8" maxlength="13" [(ngModel)]="model.tel_contato"  ></ion-input>
+        </ion-item>
+        <ion-label stacked *ngIf="errorTel_contato" class="error"> {{messageTel_contato}}</ion-label>
+
+      </div>
+    
+      <button ion-button block color="secondary" class="button">Salvar</button>
+        
+    </form>
+
+</ion-content>
